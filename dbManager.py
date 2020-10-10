@@ -1,7 +1,7 @@
 import sqlite3, os, random
 
 def resetDB():
-    os.remove("fileManager.db")
+    #os.remove("fileManager.db")
     dbConnector = sqlite3.connect("fileManager.db")
     dbMan = dbConnector.cursor()
     dbMan.execute('''CREATE TABLE fileLocation(id int, fileNames text)''')
@@ -31,3 +31,4 @@ def readDB(code):
 def doesExist(dbManCheck, coded):
     read = dbManCheck.execute('SELECT COUNT(1) FROM fileLocation WHERE id='+str(coded))
     return read.fetchone()[0]
+resetDB()
