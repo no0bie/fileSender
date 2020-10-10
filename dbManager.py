@@ -31,3 +31,4 @@ def readDB(code):
 def doesExist(dbManCheck, coded):
     read = dbManCheck.execute('SELECT COUNT(1) FROM fileLocation WHERE id='+str(coded))
     return read.fetchone()[0]
+    
